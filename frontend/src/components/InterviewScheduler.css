@@ -1,0 +1,155 @@
+/* src/components/InterviewScheduler.css */
+
+.scheduler-container {
+    margin-top: 20px;
+    padding: 25px;
+    /* Removed background as it inherits from panel */
+}
+  
+.scheduler-container h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+  
+.scheduler-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+  
+.scheduler-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+  
+.scheduler-form input[type="date"],
+.scheduler-form input[type="time"],
+.scheduler-form input[type="email"],
+.scheduler-form input[type="text"],
+.scheduler-form select { /* Added select */
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    width: 100%;
+    background-color: var(--deep-space-bg);
+    color: var(--text-primary);
+    color-scheme: dark; /* Helps with date picker theme */
+}
+.scheduler-form input[type="date"]:focus,
+.scheduler-form input[type="time"]:focus,
+.scheduler-form input[type="email"]:focus,
+.scheduler-form input[type="text"]:focus,
+.scheduler-form select:focus { /* Added select */
+    outline: none;
+    border-color: var(--accent-magenta);
+    box-shadow: 0 0 0 2px var(--accent-magenta);
+}
+  
+.scheduler-form button {
+    background-color: var(--accent-magenta);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px; /* Added some top margin */
+}
+  
+.scheduler-form button:hover {
+    background-color: var(--accent-magenta-hover);
+    transform: translateY(-1px);
+}
+  
+.scheduled-details {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: var(--nebula-blue); /* Consistent with other info boxes */
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px var(--shadow-color);
+}
+  
+.scheduled-details p {
+    margin: 0 0 10px 0;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+}
+.scheduled-details p:last-child {
+    margin-bottom: 0;
+}
+  
+.scheduled-details .icon-calendar,
+.scheduled-details .icon-meet {
+    margin-right: 10px;
+    color: var(--accent-cyan);
+    font-size: 1.2em;
+}
+  
+.scheduled-details strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+.scheduled-details a {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    font-weight: 500;
+}
+.scheduled-details a:hover {
+    text-decoration: underline;
+}
+  
+.status-box {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 20px;
+    margin-top: 15px;
+    margin-right: 10px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+  
+.status-box.reminder-sent {
+    background-color: var(--jd-fit-green-bg);
+    color: var(--jd-fit-green-text);
+}
+  
+.status-box.no-show-risk { /* You might remove this if not used from backend */
+    background-color: var(--jd-fit-yellow-bg);
+    color: var(--jd-fit-yellow-text);
+}
+  
+.status-box .icon-check,
+.status-box .icon-warning {
+    margin-right: 6px;
+    font-size: 1.1em;
+}
+
+/* Error box styling for scheduleResult */
+.scheduled-details.error-box {
+    background-color: var(--red-flag-bg);
+    border: 1px solid var(--red-flag-color);
+}
+.scheduled-details .error-text {
+    color: var(--red-flag-text);
+    font-weight: 500;
+}
+.scheduled-details .error-text a { /* Style for links within error messages */
+    color: var(--red-flag-text); /* Or a slightly different shade to stand out */
+    text-decoration: underline;
+    font-weight: bold;
+}
+.scheduled-details .error-text a:hover {
+    color: #e74c3c; /* Darker red for hover on error links */
+}

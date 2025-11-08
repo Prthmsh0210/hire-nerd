@@ -1,0 +1,79 @@
+/* src/components/UpcomingInterviews.css */
+
+.upcoming-interviews-container {
+  padding: 20px;
+  /* background-color: var(--panel-bg); Already on parent */
+  /* border-radius: 12px; */
+  /* box-shadow: 0 5px 30px var(--shadow-color); */
+  /* border: 1px solid var(--panel-border); */
+  /* backdrop-filter: blur(5px); */
+}
+
+.upcoming-interviews-container h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-shadow: 0 0 5px var(--text-glow);
+}
+
+.no-interviews-message {
+  color: var(--text-tertiary);
+  text-align: center;
+  font-style: italic;
+  padding: 20px;
+}
+
+.interviews-list {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.interview-item-card {
+  background-color: var(--nebula-blue); /* Slightly different from main panel for depth */
+  border: 1px solid var(--panel-border);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px var(--shadow-color);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.interview-item-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 6px 15px var(--strong-shadow-color);
+}
+
+.interview-item-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.interview-item-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.interview-item-card strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.interview-item-card a {
+  color: var(--accent-magenta);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.interview-item-card a:hover {
+  text-decoration: underline;
+  color: var(--accent-magenta-hover);
+}

@@ -1,0 +1,44 @@
+# requirements.txt
+#
+# Core FastAPI and Server
+fastapi
+uvicorn[standard]
+
+# Data Handling and Export
+pandas
+openpyxl
+# Explicitly required for PDF reading in jd_parser.py and resume_parser.py
+PyPDF2
+
+# Database
+motor
+pydantic[email]
+
+# Google API Services (for OAuth2, Calendar, Gmail, Drive)
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+
+# NLP and Matching
+scikit-learn
+scipy
+joblib
+numpy
+# Requires the 'en_core_web_sm' model to be downloaded separately: 
+# python -m spacy download en_core_web_sm
+spacy
+sentence-transformers
+transformers
+torch
+
+# Utilities
+python-multipart
+python-dotenv
+six
+
+# File Handling and Text Extraction
+# Required for .docx file processing
+python-docx
+# Pillow and pytesseract are generally used for OCR (if the PDF/Resume parser attempts it, though not strictly in the provided code logic)
+Pillow
+pytesseract

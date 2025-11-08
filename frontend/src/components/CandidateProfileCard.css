@@ -1,0 +1,246 @@
+/* src/components/CandidateProfileCard.css */
+
+.profile-card {
+    background-color: var(--panel-bg);
+    padding: 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+    border: 1px solid var(--panel-border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.profile-card:hover {
+    transform: translateY(-6px) scale(1.015);
+    box-shadow: 0 8px 20px var(--strong-shadow-color);
+}
+  
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+  
+.profile-image img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-cyan);
+    padding: 2px; 
+    background-color: white; 
+}
+  
+.profile-details {
+    flex-grow: 1;
+}
+  
+.profile-details h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+  
+.profile-details p {
+    margin: 2px 0 0 0;
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+}
+
+/* NEW/UPDATED: Styles for the contact info section */
+.contact-info {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+}
+
+.contact-info span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-info .icon {
+  width: 16px;
+  opacity: 0.7;
+}
+  
+.interview-score { 
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 0.5rem;
+}
+  
+.interview-score span:first-child {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    font-weight: 500;
+}
+  
+.interview-score span:last-child {
+    font-size: 1.3rem; 
+    font-weight: 600;
+    color: var(--text-primary);
+}
+  
+.profile-content {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+}
+  
+.red-flags {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--red-flag-bg); 
+    border-radius: 6px;
+    border-left: 3px solid var(--red-flag-color);
+}
+  
+.red-flags h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--red-flag-text);
+    font-weight: 600;
+}
+  
+.red-flags ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+  
+.red-flags li {
+    font-size: 0.85rem;
+    color: var(--red-flag-text);
+    margin-bottom: 0.25rem;
+}
+.red-flags li::before {
+    content: "⚠️ "; 
+    margin-right: 4px;
+}
+  
+.experience-summary {
+    margin-bottom: 1rem;
+}
+  
+.experience-summary h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+  
+.experience-summary p {
+    margin-top: 0.25rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-size: 0.85rem;
+}
+  
+.scorecard {
+    margin-bottom: 1rem;
+}
+  
+.scorecard h4 {
+    margin: 0 0 0.75rem 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+  
+.score-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.4rem;
+}
+  
+.score-item span:first-child {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    width: 100px;
+    flex-shrink: 0;
+}
+  
+.progress-bar-container {
+    flex-grow: 1;
+    height: 8px; 
+    background-color: var(--nebula-blue);
+    border-radius: 4px;
+    overflow: hidden;
+}
+  
+.progress-bar-fill {
+    height: 100%;
+    background-color: var(--accent-cyan);
+    border-radius: 4px;
+    transition: width 0.4s ease-in-out;
+}
+  
+.score-item span:last-child {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    width: auto; /* Allow this to expand */
+    min-width: 20px;
+    text-align: right;
+    flex-shrink: 0;
+}
+  
+.profile-card-actions { 
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 1rem;
+    align-items: center;
+    gap: 0.75rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.profile-action-btn { 
+    flex: 1;
+    background-color: transparent;
+    color: var(--accent-cyan);
+    border: 1px solid var(--accent-cyan);
+    padding: 0.5rem 1rem;
+    border-radius: 20px; 
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+  
+.profile-action-btn:hover {
+    background-color: var(--accent-cyan);
+    color: var(--deep-space-bg);
+    transform: scale(1.03);
+}
+
+.profile-action-btn.ai-interview-btn { 
+    border-color: var(--accent-magenta);
+    color: var(--accent-magenta);
+}
+.profile-action-btn.ai-interview-btn:hover {
+    background-color: var(--accent-magenta);
+    color: var(--text-on-accent);
+}
+
+.ai-interview-status {
+    font-size: 0.75rem;
+    color: var(--jd-fit-green-text);
+    font-weight: 500;
+    text-align: right;
+}
+.ai-interview-status::before {
+    content: "✓ ";
+}

@@ -1,0 +1,249 @@
+/* src/components/HomePage.css */
+
+.home-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90vh;
+  padding: 4rem 0;
+  gap: 3rem;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.hero-content .powered-by-ai {
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-magenta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-cta .btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.hero-cta .btn-primary {
+  background-color: var(--accent-cyan);
+  color: var(--deep-space-bg);
+  box-shadow: 0 0 20px -5px var(--accent-cyan);
+}
+
+.hero-cta .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px 0px var(--accent-cyan);
+}
+
+.hero-cta .btn-secondary {
+  background-color: transparent;
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+}
+.hero-cta .btn-secondary:hover {
+  background-color: var(--accent-cyan);
+  color: var(--deep-space-bg);
+}
+
+/* --- 3D ROTATING CAROUSEL STYLES --- */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px; 
+}
+
+.carousel-stage {
+  position: relative;
+  width: 100%;
+  /* MODIFIED: Changed max-width and aspect-ratio for a portrait "letter-paper" shape */
+  max-width: 420px;
+  aspect-ratio: 3 / 4; 
+  transform-style: preserve-3d;
+  transform: rotateY(-10deg) rotateX(3deg);
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  border: 1px solid var(--panel-border);
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  opacity: 0;
+  transition: transform 1s cubic-bezier(0.7, 0, 0.3, 1), opacity 0.8s ease;
+}
+
+.carousel-image.active {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+/* --- END CAROUSEL STYLES --- */
+
+
+/* --- Features Section --- */
+.features-section, .how-it-works-section {
+  padding: 6rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px var(--strong-shadow-color);
+  border-color: var(--accent-cyan);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --- How It Works Section --- */
+.how-steps-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap; 
+}
+.how-step {
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+    transition: all 0.4s ease;
+}
+
+.how-step:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 30px var(--strong-shadow-color);
+    border-color: var(--accent-cyan);
+}
+
+.how-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+.how-step p {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+.how-arrow {
+    font-size: 2rem;
+    color: var(--text-tertiary);
+}
+
+@media (max-width: 900px) {
+    .how-steps-container {
+        flex-direction: column;
+    }
+    .how-arrow {
+        transform: rotate(90deg);
+        margin: -1rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-cta {
+        justify-content: center;
+    }
+}

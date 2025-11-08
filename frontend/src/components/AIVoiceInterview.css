@@ -1,0 +1,65 @@
+/* src/components/AIVoiceInterview.css */
+
+.ai-voice-interview-container {
+    padding: 25px;
+    border-radius: 12px;
+    background-color: transparent; /* Inherit from panel */
+}
+
+.ai-voice-interview-container h4 {
+    color: var(--text-primary);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.ai-voice-interview-container strong {
+    color: var(--text-secondary);
+}
+
+#ai-response-display, #user-transcript-display {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    min-height: 20px;
+    color: var(--text-primary);
+}
+
+#ai-response-display {
+    background-color: var(--nebula-blue); /* Dark blue for AI text */
+}
+
+#user-transcript-display {
+    background-color: var(--nebula-purple); /* Dark purple for user text */
+}
+
+.ai-voice-interview-container button {
+    background-color: var(--accent-cyan);
+    color: var(--deep-space-bg);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.ai-voice-interview-container button:hover:not(:disabled) {
+    background-color: var(--accent-cyan-hover);
+    transform: translateY(-1px);
+}
+
+.ai-voice-interview-container button:disabled {
+    background-color: var(--text-tertiary);
+    color: var(--nebula-blue);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.ai-voice-interview-container p { /* For "Listening..." */
+    color: var(--text-secondary);
+    font-style: italic;
+}

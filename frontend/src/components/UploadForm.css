@@ -1,0 +1,147 @@
+/* src/components/UploadForm.css */
+
+.upload-form-container {
+  width: 100%;
+  margin: 0;
+  padding: 25px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px var(--shadow-color);
+  font-family: 'Space Grotesk', sans-serif;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.upload-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.upload-group {
+  margin-bottom: 20px;
+}
+
+.upload-label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* MODIFIED: Themed input fields */
+.upload-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: var(--deep-space-bg); /* Use dark background */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text-primary);
+}
+
+.upload-input:focus {
+  outline: none;
+  border-color: var(--accent-cyan); /* Use glowing accent */
+  background-color: var(--nebula-purple);
+  box-shadow: 0 0 0 2px var(--accent-cyan);
+}
+
+/* MODIFIED: Themed file list */
+.file-name,
+.file-list {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.file-list {
+  list-style-type: none;
+  padding: 8px;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.2); /* Darker inset look */
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+.file-item {
+  margin-bottom: 5px;
+  padding: 4px 8px;
+  background-color: var(--nebula-purple); /* Themed item background */
+  color: var(--text-glow);
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.consent-group {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.consent-group input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent-cyan); /* Modern way to color checkboxes */
+}
+
+.consent-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.consent-label a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-weight: 500;
+}
+.consent-label a:hover {
+  text-decoration: underline;
+}
+
+/* MODIFIED: Themed submit button */
+.submit-button {
+  width: 100%;
+  padding: 14px;
+  background-color: transparent;
+  color: var(--accent-magenta);
+  border: 2px solid var(--accent-magenta);
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  box-shadow: 0 0 15px -4px var(--accent-magenta);
+}
+
+.submit-button:hover:not(.disabled) {
+  background-color: var(--accent-magenta);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px 0px var(--accent-magenta);
+}
+ .submit-button:active:not(.disabled) {
+  transform: translateY(0px);
+ }
+
+.submit-button.disabled {
+  border-color: var(--text-tertiary);
+  color: var(--text-tertiary);
+  cursor: not-allowed;
+  background-color: transparent;
+  box-shadow: none;
+  transform: none;
+}

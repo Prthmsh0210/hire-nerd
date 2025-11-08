@@ -1,0 +1,351 @@
+/* src/App.css (Replace all content) */
+
+:root {
+  /* --- DEEP SPACE NEBULA THEME --- */
+  color-scheme: dark;
+  --deep-space-bg: #100f1c; /* Very dark, slightly purplish black */
+  --nebula-purple-dark: #2c1d3c;
+  --nebula-purple-medium: #483d8b;
+  --nebula-glow-bright: #dcd0ff; /* Bright lavender for the core */
+  
+  --panel-bg: rgba(29, 23, 46, 0.75);
+  --panel-border: rgba(180, 140, 225, 0.25);
+  
+  --header-bg: rgba(16, 15, 28, 0.7);
+  --header-border: rgba(180, 140, 225, 0.15);
+
+  --text-primary: #f0e8ff;
+  --text-secondary: #bca8d9;
+  --text-tertiary: #9482b3;
+  --text-glow: #e0c0ff;
+  --text-on-accent: #ffffff;
+
+  --accent-cyan: #00e5ff;
+  --accent-cyan-hover: #61faff;
+  --accent-magenta: #ff00e5;
+  --accent-magenta-hover: #ff61fa;
+  
+  --red-flag-color: #ff4757;
+  --red-flag-text: #ff4757;
+  --red-flag-bg: rgba(255, 71, 87, 0.1);
+
+  --jd-fit-green-bg: rgba(46, 204, 113, 0.1);
+  --jd-fit-green-text: #2ecc71;
+  --jd-fit-yellow-bg: rgba(241, 196, 15, 0.1);
+  --jd-fit-yellow-text: #f1c40f;
+  --jd-fit-red-bg: var(--red-flag-bg);
+  --jd-fit-red-text: var(--red-flag-color);
+
+  --border-color: rgba(94, 58, 117, 0.5);
+  --shadow-color: rgba(255, 0, 229, 0.1);
+  --strong-shadow-color: rgba(255, 0, 229, 0.2);
+}
+
+/* --- NEW ANIMATED NEBULA BACKGROUND --- */
+.nebula-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background-color: var(--deep-space-bg);
+  background-image:
+    radial-gradient(ellipse at center, var(--nebula-glow-bright) 0%, var(--nebula-purple-medium) 30%, var(--nebula-purple-dark) 60%, var(--deep-space-bg) 100%);
+  overflow: hidden;
+}
+
+@keyframes move-stars {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-100vh); }
+}
+
+.stars1, .stars2, .stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 200%; /* Double height to loop seamlessly */
+  display: block;
+}
+
+/* Layer 1: Small, distant, slow-moving stars */
+.stars1 {
+  background: transparent;
+  animation: move-stars 200s linear infinite;
+  box-shadow: 
+    10vw 30vh 0px 0px #FFF, 80vw 10vh 1px 1px #FFF, 45vw 85vh 0px 0px #FFF,
+    -10vw 90vh 0px 0px #FFF, 60vw -15vh 1px 1px #FFF, 25vw 55vh 0px 0px #FFF,
+    95vw 45vh 1px 1px #FFF, -15vw 5vh 0px 0px #FFF, 50vw 110vh 1px 1px #FFF;
+}
+
+/* Layer 2: Medium-sized, brighter, medium-speed stars */
+.stars2 {
+  background: transparent;
+  animation: move-stars 100s linear infinite;
+  box-shadow:
+    5vw 50vh 1px 1px #FFF, 75vw 20vh 2px 2px #FFF, 35vw 95vh 1px 1px #FFF,
+    -5vw 80vh 1px 1px #FFF, 55vw 25vh 2px 2px #FFF, 15vw 65vh 1px 1px #FFF,
+    85vw 55vh 2px 2px #FFF, -25vw 15vh 1px 1px #FFF, 40vw 120vh 2px 2px #FFF;
+}
+
+/* Layer 3: Large, glowing, fast-moving stars */
+.stars3 {
+  background: transparent;
+  animation: move-stars 50s linear infinite;
+  box-shadow:
+    20vw 40vh 0 2px rgba(255,255,255,0.7), 90vw 10vh 1px 3px rgba(255,255,255,0.8),
+    40vw 75vh 0 2px rgba(255,255,255,0.7), -20vw 60vh 1px 3px rgba(255,255,255,0.8),
+    65vw 35vh 0 2px rgba(255,255,255,0.7), 5vw 85vh 1px 3px rgba(255,255,255,0.8);
+}
+
+
+/* Global app layout */
+body {
+  background-color: var(--deep-space-bg);
+  color: var(--text-secondary);
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* General Component Styling for New Theme */
+.app-header {
+  background-color: var(--header-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1.25rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  z-index: 10;
+  border-bottom: 1px solid var(--header-border);
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-shadow: 0 0 8px var(--accent-cyan);
+  margin-bottom: 0.25rem;
+}
+
+.app-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-tertiary);
+}
+
+.app-main {
+  flex-grow: 1;
+  padding: 1.5rem;
+  max-width: 100%;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.error-message {
+  background-color: var(--red-flag-bg);
+  color: var(--red-flag-text);
+  padding: 1rem;
+  border: 1px solid var(--red-flag-color);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.layout-container {
+  display: flex;
+  flex-grow: 1;
+  gap: 1.5rem;
+  width: 100%;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.upload-panel {
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.results-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  box-shadow: 0 5px 30px var(--shadow-color);
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.results-content-scrollable {
+  padding: 1.5rem;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.results-panel-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.loading-state.results-panel-state p {
+  font-size: 1.1rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.avenger-spinner {
+  border: 5px solid rgba(0, 229, 255, 0.2);
+  border-top: 5px solid var(--accent-cyan);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  animation: spin 0.9s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.placeholder-results.results-panel-state {
+  border: 2px dashed var(--panel-border);
+  border-radius: 12px;
+  color: var(--text-tertiary);
+}
+.placeholder-results.results-panel-state p {
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+}
+.placeholder-results.results-panel-state p:first-child {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.section-divider {
+  height: 1px;
+  background-image: linear-gradient(to right, transparent, var(--accent-cyan), transparent);
+  border: 0;
+  opacity: 0.5;
+  margin: 2rem 0;
+}
+
+.candidate-section h2,
+.scheduler-section h2,
+.ai-voice-interview-section h2,
+.upcoming-interviews-nav-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.candidate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 1.25rem;
+  background-color: var(--header-bg);
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+  margin-top: auto;
+  flex-shrink: 0;
+  border-top: 1px solid var(--header-border);
+}
+.app-footer a {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.app-footer a:hover {
+    text-decoration: none;
+    color: var(--accent-cyan-hover);
+    text-shadow: 0 0 5px var(--accent-cyan);
+}
+
+.navigation-button {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: var(--accent-cyan);
+  border: 2px solid var(--accent-cyan);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 0 10px -2px var(--accent-cyan);
+}
+.navigation-button:hover {
+  background-color: var(--accent-cyan);
+  color: var(--deep-space-bg);
+  box-shadow: 0 0 20px 0px var(--accent-cyan);
+  transform: translateY(-2px);
+}
+.navigation-button:active {
+  transform: translateY(0px);
+}
+
+.action-buttons-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.view-profiles-button {
+  color: var(--accent-magenta);
+  border-color: var(--accent-magenta);
+  box-shadow: 0 0 10px -2px var(--accent-magenta);
+}
+.view-profiles-button:hover {
+  background-color: var(--accent-magenta);
+  color: var(--text-on-accent);
+  box-shadow: 0 0 20px 0px var(--accent-magenta);
+}
+
+/* --- Scroll Animation --- */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

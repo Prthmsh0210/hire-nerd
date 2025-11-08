@@ -1,0 +1,23 @@
+{
+  "name": "HisbandHR.ai – Smart Hiring Automation",
+  "short_name": "HisbandHR",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "description": "AI-powered recruitment platform that automates resume parsing, candidate matching, AI interviews, and smart scheduling.",
+  "icons": [
+    {
+      "src": "/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "lang": "en-US",
+  "orientation": "portrait"
+}

@@ -1,0 +1,110 @@
+/* src/components/ResultTable.css */
+
+.result-table-container {
+    margin-top: 0;
+}
+
+.result-table-container h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    text-shadow: 0 0 5px var(--text-glow);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+}
+
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+    min-width: 600px;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.result-table thead {
+    background-color: rgba(13, 12, 34, 0.5);
+}
+
+.result-table th,
+.result-table td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: background-color 0.3s ease;
+}
+
+.result-table th {
+    font-weight: 600;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.candidate-row:hover {
+    background-color: var(--nebula-purple);
+    cursor: pointer;
+    box-shadow: inset 0 0 15px -5px var(--accent-cyan);
+}
+
+.candidate-row:hover td {
+    color: var(--text-primary);
+}
+
+.jd-fit {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.jd-fit.green {
+    background-color: var(--jd-fit-green-bg);
+    color: var(--jd-fit-green-text);
+}
+
+.jd-fit.yellow {
+    background-color: var(--jd-fit-yellow-bg);
+    color: var(--jd-fit-yellow-text);
+}
+
+.jd-fit.red {
+    background-color: var(--jd-fit-red-bg);
+    color: var(--jd-fit-red-text);
+}
+
+.red-flag-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.red-flag-item {
+    font-size: 0.85rem;
+    color: var(--red-flag-color);
+    margin-bottom: 4px;
+}
+.red-flag-item::before {
+    content: "🚩 ";
+}
+
+.no-red-flags {
+    font-style: italic;
+    color: var(--text-tertiary);
+    font-size: 0.85rem;
+}
+
+.no-results {
+    text-align: center;
+    padding: 24px;
+    font-style: italic;
+    color: var(--text-tertiary);
+}
